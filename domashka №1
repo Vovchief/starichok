@@ -1,0 +1,18 @@
+initial_list = [
+    [2, 123, 23],  # 0-й лист, сумма элементов 2+123+23=148 -> 148 > 0 -> не выводим
+    [3],  # 1-й лист, сумма элементов 3 -> 3 > 1 -> не выводим
+    [1, -3],  # 2-й лист, сумма элементов -2 -> -2 > 2 -> ! выводим его номер
+    [42, 3],
+    [-1, 4]
+]
+sum = 0
+x = 0
+for index, sec_list in enumerate (initial_list):
+    for element in sec_list:
+        if index > x:
+            x = x+1
+            sum = 0
+        sum = sum + element
+        # print (index, element, "sum =", sum)
+        if element == sec_list[-1] and sum < index:
+            print (index)
